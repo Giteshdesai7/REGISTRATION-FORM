@@ -1,0 +1,79 @@
+<html>
+    <head><title>Registration Form</title></head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="registration.css" rel="stylesheet" type="text/css"/>
+    <body>
+        <div class="registration">
+            <main>
+             <h1><center>Registration Form</center></h1>
+             <p class="des-reg">Register Yourself With Your<br>
+                Personal Information</p>
+                <h5  class=time id="current-time"></h5>
+             <hr>
+             <form method="post" name="google-sheet">
+             <section>
+                <article class="Item">
+                    <p class="element">FIRST NAME</p>
+                    <input type="text"name="FIRST NAME" class="INPUT" required>
+                </article>
+                <article class="Item">
+                    <p class="element">LAST NAME</p>
+                    <input type="text" name="LAST NAME" class="INPUT" required>
+                </article>
+                <article class="Item">
+                    <p class="element">DATE OF BIRTH</p>
+                    <input type="date" Name="Date of Birth" class="INPUT" required>
+                </article>
+                <article class="Item">
+                    <p class="element">E-MAIL</p>
+                    <input type="email"  name="E-MAIL" class="INPUT" required>
+                </article>
+                <article class="Item">
+                    <p class="element">MOBILE</p>
+                    <input type="number" name="MOBILE" class="INPUT" required>
+                </article>
+                <article class="Item">
+                    <p class="element">PINCODE</p>
+                    <input type="number" name="PINCODE" class="INPUT" required>
+                </article>
+                <article class="Item">
+                    <p class="element">ADDRESS</p>
+                    <input class="INPUT" name="ADDRESS" required>
+                </article>
+                <article class="Item">
+                    <p class="element">GENDER</p>
+                    <input class="INPUT" name="GENDER" type="radio">Male <input class="INPUT" type="radio">Female
+                </article>
+                <article class="Item">
+                    <p class="element">CONTACT ME VIA</p>
+                    <input class="INPUT" name="CONTACTMEVIA" type="checkbox">SMS <input class="INPUT" type="checkbox">E-MAIL
+                </article>
+                <article class="Item">
+                    <input class="Submit" type="submit" value="SUBMIT">
+                </article>
+             </section>
+             </form>
+
+             </main>
+        </div>
+        <script>
+            let time= document.getElementById("current-time");
+            setInterval(()=>{
+                let d = new Date();
+            time.innerHTML = d.toLocaleTimeString();  
+            },1000)
+        
+        </script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwpCb-aTJ5s1M6915nvOhtxYeeopbT4EdrWJCO9GStzMXjezuKvIOLCcJqXlYFXPoJ7/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+    </body>
+</html>

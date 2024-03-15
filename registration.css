@@ -1,0 +1,50 @@
+body{
+    background-image: url(https://www.svgbackgrounds.com/wp-content/uploads/2021/05/protruding-squares-orange-background.png);
+    padding: 20px;
+}
+
+.des-reg{
+    Text-align: center;
+}
+
+.Item p{
+    display: inline-block;
+}
+
+.registration{
+    background-color: rgb(240, 194, 57);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 35px;
+    max-width: 500px;
+}
+
+.element{
+    width: 50%;
+    display: inline;
+}
+
+.INPUT{
+    text-align: center;
+}
+
+.Submit{
+    margin-left: 20ch;
+    margin-right: 29ch;
+    background-color: rgb(117, 18, 18);
+    color: ivory;
+    width:5cm;
+    height:1cm; 
+    border-radius: 30px;
+}
+
+.time{
+    text-align: right;
+}
+
+.Submit:hover{
+    transform: scale(1.1);
+    transition: .2s ease-in;
+   
+    
+}
